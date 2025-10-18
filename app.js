@@ -1,4 +1,14 @@
+// public/app.js
+const api = '/api/employees';
 
+document.addEventListener('DOMContentLoaded', () => {
+  const log = (...args) => { if (window.console) console.log('[app.js]', ...args); };
+
+  const tbody = document.querySelector('#employeesTable tbody');
+  const searchInput = document.getElementById('searchInput');
+  const addBtn = document.getElementById('addBtn');
+  const modalEl = document.getElementById('employeeModal');
+  const form = document.getElementById('employeeForm');
 
   let bsModal = null;
   try { if (modalEl && typeof bootstrap !== 'undefined') bsModal = new bootstrap.Modal(modalEl); } catch (e) { log('modal create error', e); }
